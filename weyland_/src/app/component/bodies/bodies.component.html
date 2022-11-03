@@ -1,0 +1,22 @@
+
+<br>
+<table *ngIf="response" class="table table-striped">
+  <thead class="table-light">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Discovered By</th>
+      <th scope="col">Discovery Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bodi of response?.bodies; let i = index">
+      <td>{{ bodi.englishName}}</td>
+      <td>{{ bodi.discoveredBy}}</td>
+      <td>{{ bodi.discoveryDate}}</td>
+      <td>
+        <button [routerLink]="['/bodies', bodi.englishName]" class="button btn btn-primary">View</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
